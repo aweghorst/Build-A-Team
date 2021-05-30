@@ -24,7 +24,8 @@
 
   ## Usage:
 
-https://user-images.githubusercontent.com/80176140/120122191-f3739880-c16c-11eb-824f-a7f9b8fabf54.mp4
+https://user-images.githubusercontent.com/80176140/120122226-23bb3700-c16d-11eb-8168-edefd1caa023.mp4
+
 
 
   Download the code, install the dependencies, run the code and answer the questions, find the generated html in the ./dist/index.html
