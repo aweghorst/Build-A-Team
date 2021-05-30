@@ -1,9 +1,9 @@
-const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const fs = require("fs");
 const inquirer = require("inquirer");
+const createHTML = require("./src/createHTML");
 
 const employeeList = [];
 const createManager = () => {
@@ -193,4 +193,25 @@ const createEmployee = () => {
     });
 };
 
-createManager().then(createEmployee);
+const writeFile = data => {
+  fs.writeFile("./dist/index.html", data, err => {
+    if (err) {
+      console.log(err);
+      return;
+    } else {
+      console.log("Success!");
+    }
+  });
+};
+
+createManager()
+  .then(createEmployee)
+  .then(employeeList => {
+    return newHTML(employeeList);
+  })
+  .then(pageHTML => {
+    return writeFile(pageHTML);
+  })
+  .catch(err => {
+    console.log(err);
+  });
